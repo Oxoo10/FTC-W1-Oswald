@@ -1,0 +1,185 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/layout.astro";
+import heroBackground from "../assets/images/herostack.webp";
+
+import imageDashboard from "../assets/images/dashboard.webp";
+import Digitaltoken from "../assets/images/digitaltoken.webp";
+import Dell from "../assets/icon/Dell.svg";
+import Lattice from "../assets/icon/Lattice.svg";
+import NCR from "../assets/icon/NCR.svg";
+import Pacifunds from "../assets/icon/Pacificfunds.svg";
+import Rakuten from "../assets/icon/Rakuten.svg";
+import TED from "../assets/icon/TED.svg";
+import Zendesk from "../assets/icon/Zendesk.svg";
+import IconAnalytics from "../assets/icon/Logoanalytics.svg";
+import IconCode from "../assets/icon/Logocode.svg";
+import IconTokens from "../assets/icon/Logotokens.svg";
+---
+
+<Layout>
+<section id="hero">
+	<div class="bg-[url('../assets/images/herostack.webp')] bg-cover bg-top h-full flex justify-center pt-20 md:pt-42.5 pb-20">
+		<div class="flex flex-col items-center text-white text-center md:w-2/3 space-y-6 ">
+			<div class="flex flex-col items-center space-y-6">
+				<div class="font-light font-principal border border-white/30 rounded-full text-xs md:text-lg px-4 md:w-110 py-2 md:px-5 md:py-5">
+					We just raised $20M in Series B. Learn more
+				</div>
+				<div
+					class="flex justify-center font-principal font-medium text-4xl md:text-6xl bg-gradient-to-br from-white to-white/70 text-transparent bg-clip-text"
+				>
+					Modern analytics<br />for the modern<br class="md:hidden" /> world
+				</div>
+				<div class="text-xs md:text-base flex w- text-white/65">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
+					Suspendisse varius enim in eros elementum tristique.
+				</div>
+			</div>
+			<div class="flex justify-center space-x-4">
+				<button
+					class="text-[#0B0121] bg-white px-5 py-2 rounded-full transition hover:bg-secondary"
+					>Download the app</button
+				>
+				<button
+					class="hidden lg:flex text-white border-white px-5 py-2 border rounded-full transition hover:bg-secondary"
+					>Talk to an expert</button
+				>
+			</div>
+			<div class="inset-shadow-white/50 inset-shadow-sm shadow-secondary shadow-[0_0_10px_rgba(187,155,255,0.5)] rounded-2xl m-5">
+					<Image
+						src={imageDashboard}
+						alt="dashboard"
+						class="rounded-lg"
+					/>
+			</div>
+			
+		</div>
+	</div>
+</section>
+<section id="trust ">
+	<div class="bg-background bg-cover bg-top h-full py-15">
+		<div class="flex justify-center text-center space-y-10 text-white font-principal font-light text-sm md:text-lg">
+			Trusted by teams at over 1,000 of the world’s leading organizations
+		</div>
+		<div class="flex flex-wrap justify-center items-center gap-6 p-10">
+			<Image src={Dell} alt="dell" class="object-cover rounded-lg" />
+			<Image
+				src={Zendesk}
+				alt="zendesk"
+				class="object-cover rounded-lg"
+			/>
+			<Image
+				src={Rakuten}
+				alt="rakuten"
+				class="object-cover rounded-lg"
+			/>
+			<Image
+				src={Pacifunds}
+				alt="pacifunds"
+				class="object-cover rounded-lg"
+			/>
+			<Image src={NCR} alt="ncr" class="object-cover rounded-lg" />
+			<Image
+				src={Lattice}
+				alt="lattice"
+				class="object-cover rounded-lg"
+			/>
+			<Image src={TED} alt="ted" class="object-cover rounded-lg" />
+		</div>
+	</div>
+</section>
+<section id="features">
+	<div class="bg-background text-white mx-auto flex flex-col justify-center items-center">
+		<div class="bg-radial from-white/5 from-1% to white-transparent w-3/4 text-center pb-6">
+			<div class="flex justify-center text-4xl md:text-3xl font-principal font-medium text-white pt-10">
+			Features that<br> work for your<br> future.
+			</div>
+			<div class="flex justify-center text-sm md:text-lg font-principal font-light text-white py-5 md:px-10">
+				Check out our amazing features and experience the power<br /> of Vaultflow
+				for yourself.
+			</div>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 space-y-6 mx-5">
+			<div class="noisecard relative flex flex-col items-left space-y-6 p-10 rounded-2xl bg-gradient-to-b from-white/5 to-transparent inset-shadow-white/50 inset-shadow-sm shadow-secondary shadow-x shadow-[0_0_10px_rgba(187,155,255,0.5)]">
+				<Image src={IconAnalytics} alt="analytics" class="mt-10" />
+				<div class="text-2xl font-principal font-medium">
+					Analytics Dashboard
+				</div>
+				<div class="text-sm">
+					Our Analytics Dashboard provides a clear and intuitive
+					interface for you to easily analyze your data. From
+					customizable graphs to real-time data updates, our dashboard
+					offers everything you need to gain valuable insights.
+				</div>
+				<div class="text-base">View dashboard</div>
+			</div>
+			<div
+				class="noisecard relative flex flex-col items-left space-y-6 p-10 rounded-2xl bg-gradient-to-b from-white/5 to-transparent inset-shadow-white/50 inset-shadow-sm shadow-secondary shadow-x shadow-[0_0_10px_rgba(187,155,255,0.5)]"
+			>
+				<Image src={IconTokens} alt="analytics" class="mx mt-10" />
+				<div class="text-2xl font-principal font-medium">
+					Digital Credit Tokens
+				</div>
+				<div class="text-sm">
+					Reward your customers and incentivize engagement with our
+					innovative digital credit tokens. Our tokens can be
+					customized to match your branding, and are a flexible and
+					scalable way to drive customer loyalty and encourage repeat
+					business.
+				</div>
+				<div class="text-base">View tokens</div>
+			</div>
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 noisecard relative col-span-full p-10 rounded-2xl bg-gradient-to-b from-white/5 to-transparent inset-shadow-white/50 inset-shadow-sm shadow-secondary shadow-x shadow-[0_0_10px_rgba(187,155,255,0.5)]">
+				
+				<div class="col-span-1 flex flex-col space-y-6 rounded-2xl">
+					<Image
+					src={IconCode}
+					alt="analytics"
+					class="mt-10"
+					/>
+					<div class="text-2xl font-principal font-medium">
+					Code collaboration
+					</div>
+					<div>
+					Our advanced code synchronization technology ensures
+					that your data is always up-to-date and accurate...
+					</div>
+					<div class="text-base">View code collaboration</div>
+				</div>
+
+				<div class="col-span-1 flex justify-center items-center">
+					<Image
+					src={Digitaltoken}
+					alt="analytics"
+					class="mt-10 inset-shadow-white/20 inset-shadow-sm rounded-2xl shadow-secondary shadow-[0_0_10px_rgba(187,155,255,0.5)]"
+					/>
+				</div>
+				</div>
+
+			<div class="noisecard relative col-span-full space-y-6 md:p-10 rounded-2xl bg-gradient-to-b from-white/5 to-transparent inset-shadow-white/50 inset-shadow-sm shadow-secondary shadow-x shadow-[0_0_10px_rgba(187,155,255,0.5)]">
+				<div class="flex flex-col items-center rounded-2xl font-principal md:px-12">
+					<div class="md:w-2/3 text-center space-y-6 py-6 px-2">
+						<div class="font-semibold text-center text-3xl md:text-5xl">
+							Our powerful analytics <br class="hidden md:flex" /> provides invaluable insights.
+						</div>
+						<div class="text-base md:text-lg">
+							Unlock the power of data with our cutting-edge
+							analytics product. Get instant insights with our
+							user-friendly Analytics Dashboard, and take
+							advantage of our innovative digital credit tokens to
+							reward your customers and incentivize engagement.
+						</div>
+						<button
+							id="button-expert"
+							class="text-white border-white px-5 py-2 border rounded-full transition hover:bg-secondary"
+						>
+							Download the app
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</Layout>
