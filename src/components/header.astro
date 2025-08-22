@@ -4,36 +4,45 @@ import OpenMenu from "../assets/icon/menuopen.svg";
 import CloseMenu from "../assets/icon/menuclose.svg";
 ---
 
-<header id="p" class="bg-[#0B0121] p-4 lg:h-18">
+<header id="p" class="bg-[#0B0121] px-6 py-4 md:h-18">
     <nav
         id="home"
-        class="container flex justify-between items-center mx-auto"
+        class="container flex justify-between items-center md:items-start md:justify-center mx-auto min-w-sm md:max-w-7xl"
         x-data="{ showMobileMenu: false }"
     >
         <div class="flex items-start justify-between w-full">
             <a href="#" class="text-lg font-bold">
-                <Websitelogo class="w-40 inline-block mr-2" />
+                <Websitelogo class="inline-block w-34 h-6" />
             </a>
 
             <ul
-                class="hidden lg:flex items-center space-x-8 font-principal font-normal"
+                class="hidden lg:flex items-center gap-8 font-principal font-normal"
             >
                 <li>
-                    <a href="#features" class="text-white hover:text-gray-300"
-                        >Features</a>
+                    <a
+                        href="#features"
+                        class="text-primary hover:text-gray-300 px-2 py-4"
+                        >Features</a
+                    >
                 </li>
                 <li>
-                    <a href="#pricing" class="text-white hover:text-gray-300"
-                        >Pricing</a>
+                    <a
+                        href="#pricing"
+                        class="text-primary hover:text-gray-300 px-2 py-4"
+                        >Pricing</a
+                    >
                 </li>
                 <li>
-                    <a href="#about_us" class="text-white hover:text-gray-300"
-                        >About us</a>
+                    <a
+                        href="#about_us"
+                        class="text-primary hover:text-gray-300 px-2 py-4"
+                        >About us</a
+                    >
                 </li>
                 <li>
                     <button
                         id="button-download"
-                        class="text-[#0B0121] bg-white px-5 py-2 rounded-full transition hover:bg-secondary"
+                        class="flex items-center justify-center text-background bg-primary px-2 py-4 rounded-full w-50 h-10 transition hover:bg-secondary"
                     >
                         Download the app
                     </button>
@@ -41,7 +50,7 @@ import CloseMenu from "../assets/icon/menuclose.svg";
                 <li>
                     <button
                         id="button-expert"
-                        class="text-white border-white px-5 py-2 border rounded-full transition hover:bg-secondary"
+                        class="flex items-center justify-center text-primary border-primary px-5 py-2 w-44 h-10 border rounded-full transition hover:bg-secondary"
                     >
                         Talk to an expert
                     </button>
@@ -49,64 +58,85 @@ import CloseMenu from "../assets/icon/menuclose.svg";
             </ul>
         </div>
         <div
-            class="flex flex-row items-center space-x-8 font-principal font-normal"
+            class="flex flex-row items-center gap-8 font-principal font-normal h-20"
         >
-            <!-- <a href="#" class="text-lg font-bold">
-        <Websitelogo class="w-40 inline-block mr-2" />
-      </a> -->
             <button
                 @click="showMobileMenu = !showMobileMenu"
-                class="lg:hidden focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white px-2 py-2 rounded-md text-black"
+                class="lg:hidden focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary text-black"
                 :aria-expanded="showMobileMenu.toString()"
                 aria-label="Toggle menu"
             >
                 <div
-                    class="bg-mobilemenu p-4 rounded-lg"
+                    class="bg-mobilemenu p-4 rounded-2xl"
                     x-show="!showMobileMenu"
                 >
                     <OpenMenu class="h-6 w-6" />
                 </div>
-                <div
-                    class="bg-mobilemenu p-4 rounded-lg"
-                    x-show="showMobileMenu"
-                >
-                    <CloseMenu class="h-6 w-6" />
-                </div>
             </button>
         </div>
         <div
-            class="min-w-screen bg-background text-white absolute top-25 left-0 w-full h-full lg:hidden"
+            class="bg-background text-primary fixed top-0 left-0 w-full h-full lg:hidden"
             x-show="showMobileMenu"
             @click.away="showMobileMenu = false"
             x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 transform translate-x-full"
+            x-transition:enter-start="opacity-100 transform translate-x-full"
             x-transition:enter-end="opacity-100 transform translate-x-0"
             x-transition:leave="transition ease-in duration-300"
             x-transition:leave-start="opacity-100 transform translate-x-0"
-            x-transition:leave-end="opacity-0 transform translate-x-full"
+            x-transition:leave-end="opacity-100 transform translate-x-full"
         >
-            <ul class="flex flex-col items-left space-y-6 pt-5">
-                <li>
-                    <a href="#features" class="text-white hover:text-gray-300"
-                        >Features</a>
-                </li>
-                <li>
-                    <a href="#pricing" class="text-white hover:text-gray-300"
-                        >Pricing</a>
-                </li>
-                <li>
-                    <a href="#about_us" class="text-white hover:text-gray-300"
-                        >About us</a>
-                </li>
-                <li>
+            <div class="flex flex-col w-full max-w-sm mx-auto py-10 gap-6">
+                <div class="flex justify-between items-center">
+                    <a href="#" class="text-lg font-bold">
+                        <Websitelogo class="inline-block w-34 h-6" />
+                    </a>
+
                     <button
-                        id="button-expert"
-                        class="text-white border-white px-5 py-2 border rounded-full transition hover:bg-secondary"
+                        @click="showMobileMenu = !showMobileMenu"
+                        class="lg:hidden focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-black"
+                        :aria-expanded="showMobileMenu.toString()"
+                        aria-label="Toggle menu"
                     >
-                        Talk to an expert
+                        <div
+                            class="bg-mobilemenu p-4 rounded-2xl"
+                            x-show="showMobileMenu"
+                        >
+                            <CloseMenu class="h-6 w-6" />
+                        </div>
                     </button>
-                </li>
-            </ul>
+                </div>
+
+                <ul
+                    class="flex flex-col items-start space-y-6 font-principal font-medium text-xl;"
+                >
+                    <li>
+                        <a
+                            href="#features"
+                            class="text-primary hover:text-gray-300">Features</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#pricing"
+                            class="text-primary hover:text-gray-300">Pricing</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#about_us"
+                            class="text-primary hover:text-gray-300">About us</a
+                        >
+                    </li>
+                    <li class="absolute bottom-10 left-0 right-0 px-4">
+                        <button
+                            id="button-expert"
+                            class="text-primary text-base text-center border-primary w-full py-2 border rounded-full transition hover:bg-secondary"
+                        >
+                            Talk to an expert
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>

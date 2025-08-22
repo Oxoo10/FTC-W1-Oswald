@@ -29,7 +29,7 @@ body {
 @import "tailwindcss";
 
 @theme {
-    --color-primary: white;
+    --color-primary: #ECECEC;
     --color-secondary: #BB9BFF;
     --color-accent: #FF6B6B;
     --color-background: #0B0121;
